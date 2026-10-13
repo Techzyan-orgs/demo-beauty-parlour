@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #FAF7F2;
+    --bg-secondary: #F3ECE1;
+    --bg-card: #FFFFFF;
+    --text-primary: #1A1A1E;
+    --text-secondary: #585864;
+    --text-muted: #8E8E9A;
+    --border-color: #E6DED2;
+    --accent-gold: #C59127;
+    --accent-gold-hover: #AB741D;
+  }
+
+  .dark {
+    --bg-primary: #0A0A0C;
+    --bg-secondary: #121216;
+    --bg-card: #181820;
+    --text-primary: #F7F5F0;
+    --text-secondary: #B6B4C2;
+    --text-muted: #727082;
+    --border-color: #2D2D38;
+    --accent-gold: #D4AF37;
+    --accent-gold-hover: #ECC880;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #D4AF37;
+    color: #0A0A0C;
+  }
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #32323D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Elegant gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #ECC880 0%, #D4AF37 50%, #B38B59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism card utilities */
+.luxe-glass {
+  background: rgba(24, 24, 32, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.light .luxe-glass,
+html:not(.dark) .luxe-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* Editorial line decorative elements */
+.editorial-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.editorial-ornament::before,
+.editorial-ornament::after {
+  content: '';
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
