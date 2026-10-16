@@ -32,13 +32,13 @@ export default function TransformationLens() {
           </p>
 
           {/* Case Toggle Buttons */}
-          <div className="mt-6 flex items-center justify-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             {siteContent.transformations.map((item, idx) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => setActiveCaseIndex(idx)}
-                className={`cursor-pointer px-4 py-2 text-xs font-sans tracking-wider rounded-full border transition-all active:scale-95 ${
+                className={`cursor-pointer px-3.5 sm:px-4 py-2 text-xs font-sans tracking-wider rounded-full border transition-all active:scale-95 text-center ${
                   activeCaseIndex === idx
                     ? 'border-gold-accent bg-gold-500/20 text-gold-accent font-semibold shadow-md shadow-gold-500/10'
                     : 'border-zinc-800 bg-luxe-black text-zinc-400 hover:text-white'
@@ -111,12 +111,12 @@ export default function TransformationLens() {
           </div>
 
           {/* Caption Note */}
-          <div className="mt-4 p-4 rounded-sm bg-luxe-card border border-zinc-800 text-xs text-zinc-400 font-light flex items-center justify-between">
+          <div className="mt-4 p-4 rounded-sm bg-luxe-card border border-zinc-800 text-xs text-zinc-400 font-light flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span>
               <strong className="text-white font-medium">{activeCase.title}:</strong>{' '}
               {activeCase.notes}
             </span>
-            <span className="font-sans text-gold-accent text-xs tracking-wider shrink-0 ml-4">
+            <span className="font-sans text-gold-accent text-xs tracking-wider shrink-0 sm:ml-4">
               {sliderPosition}% Revealed
             </span>
           </div>
